@@ -1,0 +1,75 @@
+.w-25 {
+    width: 25%
+}
+
+
+.w-50 {
+    width: 25%
+}
+
+
+.w-75 {
+    width: 25%
+}
+
+
+.w-100 {
+    width: 25%
+}
+
+.h-25 {
+    height: 25%
+}
+
+
+.h-50 {
+    height: 25%
+}
+
+
+.h-75 {
+    height: 25%
+}
+
+
+.h-100 {
+    height: 25%
+}
+
+
+.text-center {
+    text-align: center !important;
+}
+
+
+.text-small {
+    font-size: small !important;
+}
+
+.text-custom {
+    font-size: 10px !important;
+}
+
+
+.text-xsmall {
+    font-size: 7px !important;
+}
+
+
+
+.text-medium {
+    font-size: medium !important;
+}
+
+.text-large {
+    font-size: large !important;
+}
+
+.text-shadow {
+    text-shadow: #533d4a 1px 1px, #533d4a 2px 2px, #533d4a 3px 3px, #533d4a 4px 4px, #533d4a 5px 5px, #533d4a 6px 6px;
+}
+
+.linear-gradient {
+    background: linear-gradient(to right, transparent, #818078, transparent);
+    height: 1px;
+}

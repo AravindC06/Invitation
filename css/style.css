@@ -1,0 +1,520 @@
+@font-face {
+    font-family: GreatVibes;
+    src: url('../assets/fonts/GreatVibes.ttf')
+  }
+  
+  @font-face {
+    font-family: Righteous;
+    src: url('../assets/fonts/Righteous.ttf')
+  }
+  
+  @font-face {
+    font-family: Pacifico;
+    src: url('../assets/fonts/Pacifico.ttf')
+  }
+  
+  
+  
+  body {
+    background: radial-gradient(ellipse at center, #fff4ee 0%, #f4c3b4 100%);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    perspective: 1000px;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: GreatVibes;
+    color: #6E615B
+  }
+  
+  @media (min-width: 320px) and (max-width: 1023px) {
+    body {
+      transform: scale(1);
+    }
+  }
+  
+  * {
+    outline: none;
+  }
+  
+  a
+  {
+   color: black;
+   text-decoration: none;
+  }
+
+  .invitation {
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeInAnimation 1s ease-in;
+  }
+  
+  .envelope {
+    background: #060606;
+    width: 100%;
+    height: 307.6923076923px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .envelope.is-open:before,
+  .envelope.is-open:after {
+    z-index: -2;
+  }
+  
+  .envelope:before,
+  .envelope:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .envelope:before {
+    right: 0;
+    border-bottom: 0px solid transparent;
+    border-top: 307.6923076923px solid transparent;
+    border-right: 500px solid gold;
+    z-index: 1;
+  }
+  
+  .envelope:after {
+    left: 0;
+    border-bottom: 0px solid transparent;
+    border-top: 307.6923076923px solid transparent;
+    border-left: 500px solid gold;
+    z-index: 1;
+  }
+  
+  .flap {
+    border-right: 252px solid transparent;
+    border-top: 155.8461538462px solid #060606;
+    border-left: 250px solid transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: 50% 0%;
+    z-index: 2;
+  }
+  
+  .mask {
+    box-sizing: border-box;
+    -webkit-clip-path: inset(0 0 50% 0);
+    clip-path: inset(0 0 50% 0);
+    overflow: hidden;
+    position: relative;
+    width: 480px;
+    height: 2010px;
+    z-index: 0;
+    margin: auto;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  
+  .card {
+    position: relative;
+    width: 480px;
+    height: 670px;
+    margin: auto;
+    transform-style: preserve-3d;
+    transform-origin: 50% 10%;
+    transform: translate(0, 128%) rotateY(0deg);
+  }
+  
+  .face {
+    top: 0;
+    right: 0;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    /* background: transparent 50% 100%/auto 100% no-repeat; */
+  }
+  
+  .face:last-of-type {
+    transform: translateZ(-3px) rotateY(180deg);
+  }
+  
+  .front {
+    overflow: hidden;
+    backface-visibility: hidden;
+    z-index: 2;
+    /* object-fit: cover; */
+  }
+  
+  .back {
+    background-image: url(../assets/back-background.png);
+    background-size: cover;
+  
+  }
+  
+  .back .face.back {
+    color: #000;
+    overflow: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .face.back .img-bouqet {
+    position: relative;
+    width: 50%;
+    display: inline-block;
+    /* left: 50%; */
+    /* transform: translate(-50%, 0); */
+  }
+  
+  button {
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-family: Pacifico;
+    color: #eaaa57;
+    background: wheat;
+    border: none;
+    position: absolute;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    left: 50%;
+    top: 170px;
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
+    z-index: 1;
+    cursor: pointer;
+    transition: background 0.3s ease-out, color 0.3s ease-out;
+  }
+  
+  button.invert {
+    background-color: gold;
+    color: #060606;
+  }
+
+  button.outvert {
+    background-color: #060606;
+    color: gold;
+  }  
+  
+  .main-title {
+    text-align: center;
+    padding: 10px;
+    font-size: 35px;
+    color: rgb(243, 102, 14);
+    text-shadow: #464646 1px 1px, #434343 2px 2px, #434343 3px 3px;
+    min-width: 10px;
+    min-height: 10px;
+  }
+  
+  
+  /* 
+  h1 {
+    color: #fff;
+    font-size: 42px;
+    margin: 0;
+    line-height: 47px;
+    letter-spacing: 2px;
+  } */
+  
+  
+  
+   
+  
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOutAnimation {
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  
+  
+  .texture {
+    background-image: url(../assets/texture.png);
+    background-size: cover;
+    position: relative;
+    width: 480px;
+    height: 670px;
+    margin: auto;
+    transform-style: preserve-3d;
+    transform-origin: 50% 10%;
+  }
+  
+  
+  .card {
+    position: relative;
+    width: 480px;
+    height: 670px;
+    margin: auto;
+    transform-style: preserve-3d;
+    transform-origin: 50% 10%;
+    transform: translate(0, 128%) rotateY(0deg);
+  }
+  
+  .flower {
+    background-image: url(../assets/background.png);
+    background-color: transparent;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+  }
+  
+  .face {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* background: transparent 50% 100%/auto 100% no-repeat; */
+  }
+  
+  .front {
+    top: 0;
+    right: 0;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+  }
+  
+  
+  .container {
+    /* left: 50%; */
+    /* top: 50%; */
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: swing 3s ease-in-out infinite alternate;
+    transform-origin: center -20px;
+    background-image: url(../assets/frame.png);
+    background-size: 100% 100%;
+  }
+  
+  
+  
+  
+  
+  .name-container {
+    top: 50%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  
+  .name-header {
+    position: relative;
+  }
+  
+  
+  
+  .title {
+    font-size: 15px;  
+  }
+  
+  .title span {
+    transform: skew(-10deg);
+    min-width: 10px;
+    min-height: 10px;
+    position: relative;
+  }
+  
+  
+  .hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: 0.5;
+  }
+  
+  .hr-text:before {
+    content: "";
+    background: linear-gradient(to right, transparent, #818078, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+  }
+  
+  .hr-text:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: black;
+    padding: 0 0.5em;
+    line-height: 1.5em;
+    color: #818078;
+    background-color: #fcfcfa;
+  }
+  
+  .honour {
+    margin-top: 20px;
+    font-family: Righteous;
+  }
+  
+  .line {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: 0.5;
+  }
+  
+  
+  .invite-title {
+    font-family: Righteous;
+    font-size: 7px !important;
+  }
+  
+  
+  @keyframes swing {
+    0% {
+      transform: rotate(3deg);
+    }
+  
+    100% {
+      transform: rotate(-3deg);
+    }
+  }
+  
+  
+  #back-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .back-content-header {
+    font-size: 30px;
+    font-weight: 650;
+  }
+  
+  .back-content-message {
+    margin-left: 3rem !important;
+    margin-right: 3rem !important;
+    font-family: Righteous;
+  
+  }
+  
+  .wedding-message {
+    font-size: 15px;
+  }
+  
+  .back-content-footer {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 12px;
+    font-weight: 650;
+  }
+  
+  .details {
+    margin-top: 1rem;
+  }
+  
+  .details>div {
+    line-height: 1rem;
+    text-decoration: underline;
+  }
+  
+  
+  
+  
+  #loader {
+    border: 6px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 6px solid #444444;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  
+  .companyLogoContainer {
+    position: absolute;
+    z-index: 3;
+    width: 15vh;
+    height: 15vh;
+    top: -20vh;
+    left: 25%; 
+    transform: translateX(-50%);
+  }
+  
+  .companyLogoImage {
+    width: 100%;
+    height: auto;
+  }
+
+#inv-btn{
+  z-index: 5;
+}
+
+@media (min-width: 0px) and (max-width: 550px) {
+  .invitation {
+    padding: 0rem;;
+  }
+}
+
+
+/* .translate-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #eaaa57;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+} */
+
+/* Other existing styles... */
+
+.translate-button {
+  position: fixed;
+  top: -249px; /* Ensure it's 20px from the top of the viewport */
+  right: 20px; /* Ensure it's 20px from the right edge of the viewport */
+  z-index: 1000; /* Ensure it's above other elements */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  padding: 1em 1.5em; /* Adjust button size */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  width:fit-content;
+}
